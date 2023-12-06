@@ -41,13 +41,14 @@ img_fft_log[img_fft_log < umbral] = 1
 img_fft_log[img_fft_log >= umbral] = 0
 
 # Filtro de mínimo
-img_fft_log = filters.minimum_filter(img_fft_log, size=3)
+img_min = filters.minimum_filter(img_fft_log, size=3)
 
 # Mostrar la máscara después del filtro de mínimo
-plt.imshow(img_fft_log, cmap='gray')
+plt.imshow(img_min, cmap='gray')
 plt.title('Máscara Umbral')
 plt.axis('off')
 plt.show()
+
 
 # Con la m ́ascara del filtro selectivo suprima adem ́as las componentes de muy baja frecuencia.
 # Para esto puede combinar la m ́ascara obtenida en el paso anterior (c) con un filtro pasa bajo
@@ -72,7 +73,7 @@ def filtro_ideal(img, D0):
     return filtro
 
 # Filtro ideal
-D0 = 50
+D0 = 10
 filtro = filtro_ideal(img, D0)
 plt.imshow(filtro, cmap='gray')
 plt.title('Filtro ideal')
@@ -80,9 +81,11 @@ plt.axis('off')
 plt.show()
 
 # Combinación de ambos
-img_fft_log = filtro* img_fft_log
-plt.imshow(img_fft_log, cmap='gray')
+img_min1 = img_min* filtro
+plt.imshow(img_min1, cmap='gray')
 plt.title('Combinación')
 plt.axis('off')
 plt.show()
+
+
 
