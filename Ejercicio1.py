@@ -31,8 +31,8 @@ plt.show()
 
 # Parte 1.C
 # Para lograr eliminar el ruido en la imagen ocasionado por las frecuencias especıficas, primero
-# obtenga una mascara a partir del m ́odulo de la Transformada de Fourier en escala logarıtmica
-# utilizando un umbral igual a 10. Para unir los puntos m ́as cercanos aplique un filtro de
+# obtenga una mascara a partir del módulo de la Transformada de Fourier en escala logarıtmica
+# utilizando un umbral igual a 10. Para unir los puntos más cercanos aplique un filtro de
 # mınimo. 
 
 # Umbral
@@ -50,11 +50,11 @@ plt.axis('off')
 plt.show()
 
 
-# Con la m ́ascara del filtro selectivo suprima adem ́as las componentes de muy baja frecuencia.
-# Para esto puede combinar la m ́ascara obtenida en el paso anterior (c) con un filtro pasa bajo
-# ideal de radio a elecci ́on (utilizar operaciones l ́ogicas). Para la implementaci ́on del filtro ideal
-# utilice la funci ́on disponible en el archivo fft lib. Despliegue las tres im ́agenes m ́ascara, filtro
-# ideal y combinaci ́on de ambos,
+# Con la máscara del filtro selectivo suprima además las componentes de muy baja frecuencia.
+# Para esto puede combinar la máscara obtenida en el paso anterior (c) con un filtro pasa bajo
+# ideal de radio a elección (utilizar operaciones lógicas). Para la implementación del filtro ideal
+# utilice la función disponible en el archivo fft lib. Despliegue las tres imágenes máscara, filtro
+# ideal y combinación de ambos,
 
 # Filtro pasa bajo ideal
 def filtro_ideal(img, D0):
